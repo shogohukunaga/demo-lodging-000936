@@ -1,0 +1,83 @@
+/* Motion study v2. Independently implemented from observed timing and geometry. */
+:root{--motion-ease:cubic-bezier(.22,.68,0,1);--slide-ease:cubic-bezier(.723,.002,.263,1.003)}
+.arrival__backdrop{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:#182632}
+.arrival__scene{position:absolute;inset:0;background:url('assets/hero-fuji.jpg') center/cover;transform:scale(1.035)}
+.arrival__shade{position:absolute;inset:0;background:linear-gradient(#07101a25,#07101a08 45%,#07101a35)}
+.hero{z-index:1;background:transparent;overflow:visible}
+.js .hero__center{position:fixed;z-index:1;pointer-events:none;will-change:transform,opacity,filter}
+.hero__bottom{z-index:1}
+.intro{height:auto;min-height:0;padding:clamp(55px,7vw,120px) 0 clamp(160px,16vw,300px);display:block;background:transparent;overflow:visible;z-index:2}
+.intro__paper{position:relative;margin:0 auto;min-width:0;width:clamp(560px,43vw,820px);height:auto;min-height:0;padding:clamp(28px,3vw,62px);background:transparent;box-shadow:none;display:flex;flex-direction:column;align-items:center;gap:clamp(25px,2.8vw,55px)}
+.intro__paper-bg{position:absolute;inset:0;background:var(--paper-light);z-index:-1;will-change:clip-path}
+.intro__picture{position:relative;inset:auto;width:74%;height:clamp(300px,28vw,540px);overflow:hidden;will-change:clip-path}
+.intro__picture img{height:100%;filter:none;object-position:50% 48%;will-change:transform;transform:scale(1.6)}
+.intro__english{position:relative}
+.intro__vertical{height:clamp(350px,30vw,540px);max-height:none;align-self:auto;gap:clamp(28px,3vw,64px);flex-shrink:0;flex-direction:column}
+.char-reveal{white-space:nowrap}
+.intro__vertical p{display:flex;flex-direction:column;gap:0;line-height:2.2}
+.intro__vertical .copy-line{display:block;white-space:nowrap}
+.intro__seal{position:relative}
+.intro__caption{bottom:clamp(55px,5vw,100px)}
+.content-stage{position:relative;z-index:3}
+.content-shell{position:relative;will-change:clip-path,transform;transform-origin:top center}
+.closing,.footer{position:relative;z-index:3}
+.js .reveal,.js .reveal.is-visible{opacity:1;transform:none;filter:none;transition:none}
+.motion-char{display:inline-block;white-space:pre}
+.js .char-reveal .motion-char{opacity:0;filter:blur(6px);transform:translateY(1em);transition:opacity 1s linear,filter 1s linear,transform 1s var(--motion-ease);transition-delay:calc(var(--char-index)*.1s)}
+.js .char-reveal.is-shown .motion-char{opacity:1;filter:blur(0);transform:translateY(0)}
+.js .intro__vertical .motion-char{transition-duration:1.6s;transition-delay:calc(var(--char-index)*.15s)}
+.js .copy-line{opacity:0;filter:blur(3px);transform:translateY(2em);transition:opacity 1.8s var(--motion-ease),filter 1.8s var(--motion-ease),transform 1.8s var(--motion-ease);transition-delay:calc(.25s + var(--line-index)*.1s)}
+.js .copy-shown .copy-line{opacity:1;filter:blur(0);transform:translateY(0)}
+.js .image-wash{mask-image:linear-gradient(168deg,#000 32%,#000b 40%,#0003 52%,transparent 65%);mask-size:100% 320%;mask-position:0 100%;mask-repeat:no-repeat;opacity:0;transition:mask-position 4.5s var(--motion-ease),opacity 1.5s linear}
+.js .image-wash.is-shown{mask-position:0 0;opacity:1}
+.image-wash>img{transform:scale(1.1);filter:blur(3px);transition:transform 2s var(--motion-ease),filter 2s linear}
+.image-wash.is-shown>img{transform:scale(1);filter:blur(0)}
+.stay__frame.image-wash{transition-duration:5.5s,1.5s}
+.room-stage{position:absolute;inset:0;overflow:hidden;touch-action:pan-y}
+.room-panel{position:absolute;inset:0;overflow:hidden;will-change:transform}
+.room-panel img{height:100%;width:100%;object-fit:cover;will-change:transform}
+.stay__number{z-index:3}
+.stay__arrows button{position:relative;isolation:isolate}
+.stay__arrows button:after{content:"";position:absolute;inset:-2px;border:1px solid #455559;border-radius:50%;clip-path:inset(0 100% 0 0);transition:clip-path .6s ease-in-out;pointer-events:none}
+.stay__arrows button:hover:after,.stay__arrows button:focus-visible:after{clip-path:inset(0)}
+.dining__visual{isolation:isolate}
+.dining__visual img{position:absolute;inset:0;transition:opacity 1.6s ease;transform:none;filter:none}
+.dining__visual small{z-index:3}
+.dining__visual:hover img{transform:none}
+.wellness__cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:clamp(24px,3.5vw,80px);align-items:start;touch-action:pan-x pan-y}
+.wellness__cards::-webkit-scrollbar{display:none}
+.wellness__card{flex:0 0 64%;min-width:0;scroll-snap-align:start}
+.wellness__card:nth-child(2){margin-top:0}
+.wellness__photo{height:clamp(400px,33vw,700px);overflow:hidden}
+.wellness__photo img{height:100%}
+.wellness__controls{grid-column:2;display:flex;align-items:center;justify-content:flex-end;gap:clamp(16px,2vw,40px);padding-top:clamp(24px,2vw,45px);font-size:var(--small)}
+.wellness__controls input{width:clamp(100px,14vw,250px);accent-color:#455559}
+.wellness__controls button{width:clamp(42px,3.5vw,70px);height:clamp(42px,3.5vw,70px);border-radius:50%;background:transparent;border:1px solid var(--line);font-size:var(--body);cursor:pointer}
+.wellness__controls button:disabled{opacity:.25;cursor:default}
+.site-menu{background:rgba(35,41,43,.63);backdrop-filter:blur(20px);transition:clip-path 1s var(--motion-ease),visibility 0s 1s}
+.menu-open .site-menu{transition:clip-path 1s var(--motion-ease)}
+.site-menu__brand,.site-menu__links a,.site-menu__inside>p{opacity:0;filter:blur(10px);transform:translateX(120px);transition:transform .95s var(--motion-ease),filter .95s linear,opacity .95s linear;transition-delay:0s}
+.site-menu__inside>p{transform:translateX(80px)}
+.menu-open .site-menu__brand,.menu-open .site-menu__links a,.menu-open .site-menu__inside>p{opacity:1;filter:blur(0);transform:translateX(0);transition-delay:calc(.3s + var(--menu-index,0)*.03s)}
+.menu-open .site-menu__inside>p{transition-delay:.4s;opacity:.8}
+.opening{display:none}
+.js .opening{display:grid;place-content:center;background:var(--paper-light);color:var(--ink);clip-path:none;opacity:1;transition:opacity .7s ease .3s;pointer-events:auto}
+.opening__identity{text-align:center;font-family:Georgia,serif;font-size:var(--hero-type);letter-spacing:.12em;line-height:1.18}
+.opening__identity small{display:block;font-family:'Noto Serif JP',serif;font-size:clamp(21px,calc(17px + .8vw),40px);letter-spacing:.8em;padding-left:.8em;margin-top:.25em}
+.opening__circle{position:absolute;left:calc(50% - 20px);top:calc(50% + 110px);width:40px;height:40px;fill:none;stroke:currentColor;stroke-width:1;animation:loading-turn 2.8s linear infinite;transition:opacity .4s,transform .4s}
+.opening__circle circle{stroke-dasharray:24 102;animation:loading-dash 2.8s ease-in-out infinite}
+.ready .opening{clip-path:none;opacity:0;pointer-events:none}
+.ready .opening__circle{opacity:0;transform:scale(.8)}
+@keyframes loading-turn{to{rotate:360deg}}
+@keyframes loading-dash{0%,100%{stroke-dasharray:2 124}40%{stroke-dasharray:70 56}}
+@media(max-width:700px){
+ .stay__frame.image-wash{transition-duration:4s,1.5s}
+ .intro{padding:70px 0 150px}.intro__paper{width:calc(100% - 32px);padding:26px 22px;gap:28px}.intro__picture{height:330px}.intro__vertical{height:370px;gap:20px}.intro__vertical h2{font-size:clamp(26px,calc(18px + 2vw),36px)}.intro__vertical p{line-height:1.9;letter-spacing:.09em}.intro__caption{display:none}.intro__english{font-size:var(--small);letter-spacing:.08em}
+ .wellness__cards{display:flex;overflow:auto}.wellness__card{flex-basis:88%}.wellness__card:nth-child(2){margin-top:0}.wellness__photo{height:380px}.wellness__photo img{height:100%}.wellness__controls{justify-content:space-between;gap:10px}.wellness__controls input{width:80px}
+ .opening__identity{font-size:clamp(39px,calc(25px + 4vw),65px);letter-spacing:.1em}.opening__identity small{font-size:clamp(18px,calc(14px + 1vw),24px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .js .opening{display:none}.hero__center{position:absolute!important;transform:translate(-50%,-50%)!important;opacity:1!important;filter:none!important}
+ .js .char-reveal .motion-char,.js .copy-line{opacity:1;transform:none;filter:none}.js .image-wash{mask:none;opacity:1}.image-wash>img{transform:none;filter:none}.intro__paper-bg,.intro__picture,.content-shell{clip-path:none!important;transform:none!important}.intro__picture img{transform:none!important}.arrival__scene{transform:none}
+ .site-menu__brand,.site-menu__links a,.site-menu__inside>p{filter:none;transform:none}
+}

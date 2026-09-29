@@ -1,0 +1,133 @@
+/* Typography v2.2: readable labels and proportionate copy at every width. */
+:root{
+ --body:clamp(21px,calc(13px + .82vw),34px);
+ --small:clamp(16px,calc(10px + .55vw),25px);
+ --eyebrow:clamp(17px,calc(11px + .58vw),27px);
+ --nav:clamp(27px,calc(17px + 1vw),46px);
+ --h2:clamp(40px,calc(25px + 1.7vw),74px);
+ --hero-type:clamp(64px,calc(37px + 2.5vw),112px);
+ --rail-type:clamp(23px,calc(16px + .7vw),36px);
+}
+.feature p,.closing p,.footer p{line-height:1.85}
+.feature p,.footer p{text-wrap:pretty}
+.closing p{text-wrap:balance}
+.eyebrow{color:#4f605e}
+.feature__rail h2{font-size:var(--rail-type)}
+.feature__rail{gap:clamp(12px,1.4vw,30px);letter-spacing:.2em}
+.feature h3{line-height:1.6;letter-spacing:.08em}
+.feature--stay{grid-template-columns:clamp(46px,6vw,135px) minmax(320px,34%) minmax(0,1fr)}
+.stay__copy{padding-right:clamp(12px,1.4vw,35px)}
+.text-link{gap:clamp(24px,3vw,64px)}
+.text-link:hover{gap:clamp(30px,3.6vw,80px)}
+.site-menu__inside{width:100%;max-width:2100px;grid-template-columns:30% 1fr;gap:clamp(30px,6vw,150px)}
+.site-menu__links a{letter-spacing:.1em;grid-template-columns:2em 1fr auto}
+.site-menu__brand span{font-size:clamp(40px,calc(24px + 2vw),84px)}
+.menu-toggle{width:clamp(68px,6.2vw,120px);height:clamp(68px,6.2vw,120px)}
+.head-brand span{font-size:clamp(25px,calc(17px + 1vw),46px)}
+.hero__center p,.opening__identity small{font-size:clamp(26px,calc(17px + 1.1vw),48px)}
+.intro__paper{width:clamp(620px,49vw,960px)}
+.intro__vertical{height:clamp(440px,30vw,760px);gap:clamp(28px,2.8vw,65px)}
+.intro__vertical p{font-size:var(--body);line-height:2;letter-spacing:.1em}
+.intro__vertical h2{font-size:var(--h2)}
+.intro__english{letter-spacing:.1em}
+.wellness__card h4{font-size:clamp(29px,calc(20px + 1vw),48px)}
+.wellness__card>div:not(.wellness__photo){grid-template-columns:1fr}
+.wellness__card>.wellness__photo{display:block;padding:0;border:0}
+.wellness__cards{min-width:0}
+.wellness__card p{grid-column:1;max-width:30em}
+.news__list>div{grid-template-columns:minmax(150px,22%) 1fr auto}
+.closing h2{font-size:clamp(47px,calc(30px + 2.2vw),92px)}
+.footer__name{font-size:clamp(40px,calc(26px + 1.6vw),72px)}
+/* Keep the desktop proportions beyond 1920 CSS px. Pixel caps previously
+   shrank type, controls and cards relative to the viewport at large widths. */
+@media(min-width:1921px){
+ section{scroll-margin-top:10vw}
+ :root{--pad:4.8vw;--body:calc(1.5vw + .01px);--small:calc(1.071vw + .01px);--eyebrow:calc(1.153vw + .01px);--nav:calc(1.886vw + .01px);--h2:calc(3.003vw + .01px);--hero-type:calc(4.427vw + .01px);--rail-type:calc(1.533vw + .01px)}
+ .site-head{padding:2.1vw var(--pad)}
+ .head-brand span{font-size:calc(1.886vw + .01px)}
+ .menu-toggle{width:6.2vw;height:6.2vw}
+ .hero__center p,.opening__identity small{font-size:calc(1.986vw + .01px)}
+ .hero__bottom{bottom:4vw}
+ .intro{padding:6.25vw 0 15.625vw}
+ .intro__paper{width:49vw;padding:3vw;gap:2.8vw}
+ .intro__picture{height:28vw}
+ .intro__vertical{height:30vw;gap:2.8vw}
+ .intro__caption{bottom:5vw}
+ .content-shell{padding:8vw var(--pad) 11vw}
+ .feature{grid-template-columns:7vw minmax(0,1fr);column-gap:3vw}
+ .feature+.feature{margin-top:13vw}
+ .feature__rail{gap:1.4vw}
+ .feature--stay{grid-template-columns:6vw minmax(0,34%) minmax(0,1fr);column-gap:3vw}
+ .stay__copy{padding-right:1.4vw}
+ .stay__frame{height:44.27vw}
+ .stay__number{min-width:9.375vw}
+ .stay__controls{gap:1.4vw;padding-top:2.3vw}
+ .stay__tabs{gap:1.6vw}
+ .stay__arrows{gap:1vw}
+ .stay__arrows button,.wellness__controls button{width:3.5vw;height:3.5vw}
+ .text-link{gap:3vw}.text-link:hover{gap:3.6vw}
+ .feature--dining{grid-template-columns:7vw minmax(0,1.1fr) minmax(0,.62fr) minmax(0,.53fr);gap:3vw}
+ .dining__visual--first{height:44.27vw}.dining__visual--second{height:31vw}
+ .dining__visual small{left:1.1vw;bottom:1.1vw}
+ .wellness__cards{gap:3.5vw}
+ .wellness__photo{height:33vw}
+ .wellness__heading{margin-bottom:5vw}
+ .wellness__card>div:not(.wellness__photo){padding:2vw 0}
+ .wellness__card h4{font-size:calc(2.042vw + .01px)}
+ .wellness__controls{gap:2vw;padding-top:2vw}
+ .wellness__controls input{width:13vw}
+ .news__list>div{grid-template-columns:22% 1fr auto;padding:2.5vw 0}
+ .closing{min-height:57.3vw}
+ .closing__content{padding:5.21vw var(--pad)}
+ .closing h2{font-size:calc(3.763vw + .01px)}
+ .footer{padding:6vw var(--pad) 3vw;gap:3vw}
+ .footer__name{font-size:calc(2.954vw + .01px)}
+ .footer nav{gap:3vw}
+ .side-actions__reserve{padding:2.344vw 1.3vw}
+ .site-menu__inside{max-width:none;width:82vw;gap:6vw;padding:8.3vh 3vw 4vw}
+ .site-menu__brand span{font-size:calc(3.25vw + .01px)}
+}
+/* Review recording: retain readable navigation, reduce empty vertical space
+   so the fictional-sample notice stays within a normal maximized PC window. */
+@media(min-width:701px){
+ .site-menu__inside{row-gap:clamp(20px,2vh,32px);padding-top:clamp(90px,10vh,150px);padding-bottom:clamp(28px,3vh,54px)}
+}
+@media(min-width:701px) and (max-width:1100px){
+ .feature--stay{grid-template-columns:clamp(44px,6vw,70px) minmax(0,1fr)}
+ .site-menu__inside{grid-template-columns:30% 1fr;gap:24px}
+ .site-menu__links a em{display:none}
+ .site-menu__brand span{font-size:clamp(30px,calc(18px + 1.5vw),45px)}
+}
+@media(max-width:700px){
+ :root{--body:clamp(18px,calc(16px + .52vw),20px);--small:clamp(14px,calc(12px + .52vw),16px);--eyebrow:clamp(15px,calc(13px + .52vw),17px);--nav:clamp(24px,calc(20px + 1.03vw),28px);--h2:clamp(32px,calc(24px + 2.1vw),39px);--rail-type:clamp(18px,calc(15px + .8vw),21px)}
+ .menu-toggle{width:58px;height:58px}
+ .head-brand span{font-size:clamp(20px,calc(16px + 1.1vw),25px)}
+ .hero h1,.opening__identity{font-size:clamp(40px,calc(27px + 4.1vw),58px)}
+ .hero__sup{letter-spacing:.18em}
+ .hero__center p,.opening__identity small{font-size:clamp(23px,calc(19px + 1.1vw),29px)}
+ .hero__bottom{gap:14px}
+ .hero__bottom>span{font-size:var(--body);letter-spacing:.1em}
+ .hero__bottom a{gap:.65em;letter-spacing:.1em}
+ .intro__paper{width:calc(100% - 24px);padding:24px 18px}
+ .intro__vertical{height:400px;gap:14px}
+ .intro__vertical h2{font-size:clamp(29px,calc(24px + 1.4vw),35px);letter-spacing:.12em;line-height:1.4}
+ .intro__vertical p{font-size:var(--body);line-height:1.8;letter-spacing:.07em}
+ .intro__english{letter-spacing:.03em}
+ .feature,.feature--stay{grid-template-columns:27px minmax(0,1fr);column-gap:12px}
+ .feature__rail{gap:10px;letter-spacing:.1em}
+ .stay__copy{padding-right:0}
+ .stay__tabs{gap:clamp(12px,3vw,20px)}
+ .stay__tabs button{font-size:var(--body)}
+ .stay__controls{border-bottom:0}
+ .site-menu__inside{padding:95px 24px 40px}
+ .site-menu__brand span{font-size:clamp(34px,calc(23px + 3vw),46px)}
+ .site-menu__links a{padding:.65em 0;grid-template-columns:1.5em 1fr;gap:.5em}
+ .site-menu__inside>p{line-height:1.9}
+ .wellness__card h4{font-size:clamp(26px,calc(22px + 1.1vw),31px)}
+ .news__list>div{grid-template-columns:1fr auto;gap:12px}
+ .closing h2{font-size:clamp(35px,calc(27px + 2.1vw),43px);letter-spacing:.06em}
+ .closing__content>span:first-child{letter-spacing:.1em}
+ .closing__button{padding:1em 1.3em}
+ .footer__name{font-size:clamp(31px,calc(23px + 2.2vw),42px);letter-spacing:.08em}
+ .footer__name small{display:block;margin:.7em 0}
+}

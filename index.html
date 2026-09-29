@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="description" content="架空の宿泊施設を想定したデザインサンプルです。">
+  <title>星凪荘 | 宿泊デザインサンプル（架空）</title>
+  <link rel="stylesheet" href="style.css?v=2.1">
+  <link rel="stylesheet" href="motion.css?v=2.1">
+  <link rel="stylesheet" href="typography.css?v=2.4">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="motion.js?v=2.2" defer></script>
+</head>
+<body data-case="demo-lodging-000936">
+  <a class="skip" href="#main">本文へ移動</a>
+  <div class="opening" aria-hidden="true"><div class="opening__identity">HOSHINAGI<small>霞 凪</small></div><svg class="opening__circle" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20"/></svg></div>
+  <header class="site-head" id="top">
+    <a class="head-brand" href="#top" aria-label="星凪荘・ページ先頭へ"><span>HOSHINAGI</span><small>宿泊デザインサンプル</small></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="メニューを開く"><span></span><span></span><b>MENU</b></button>
+  </header>
+  <nav class="site-menu" id="site-menu" aria-label="メインメニュー" inert>
+    <div class="site-menu__inside">
+      <div class="site-menu__brand"><span>HOSHINAGI</span><small>架空の旅宿・デザインサンプル</small></div>
+      <div class="site-menu__links">
+        <a href="#about"><span>01</span> 星凪荘について <em>Concept</em></a>
+        <a href="#stay"><span>02</span> ご宿泊 <em>Stay</em></a>
+        <a href="#dining"><span>03</span> お食事 <em>Dining</em></a>
+        <a href="#wellness"><span>04</span> 湯と余白 <em>Wellness</em></a>
+        <a href="#news"><span>05</span> ご案内 <em>Journal</em></a>
+        <a href="#sample-contact"><span>06</span> ご予約について <em>Reservation</em></a>
+      </div>
+      <p>架空の企業情報を使用したデザインサンプルです</p>
+    </div>
+  </nav>
+
+  <aside class="side-actions" aria-label="補助ナビゲーション">
+    <a class="side-actions__reserve" href="#sample-contact">空室検索 <span>↗</span></a>
+    <span class="side-actions__lang" aria-hidden="true">JP <i>/</i> EN</span>
+  </aside>
+
+  <main id="main">
+    <div class="arrival__backdrop" aria-hidden="true"><div class="arrival__scene"></div><div class="arrival__shade"></div></div>
+    <section class="hero" aria-labelledby="hero-title">
+
+      <div class="hero__center"><span class="hero__sup">AN IMAGINARY RETREAT</span><h1 id="hero-title">HOSHINAGI</h1><p>霞 凪</p></div>
+      <div class="hero__bottom"><span>富士を望む、静寂の旅へ。</span><a href="#about">SCROLL <span>↓</span></a></div>
+      <div class="hero__count" aria-hidden="true"><span id="hero-current">01</span><i></i><span>02</span></div>
+    </section>
+
+    <section class="intro" id="about" aria-labelledby="intro-title">
+      <div class="intro__paper">
+        <div class="intro__paper-bg" aria-hidden="true"></div>
+        <div class="intro__picture"><img src="assets/hero-fuji.jpg" alt="富士を望む静かな夕景のイメージ写真"></div>
+        <p class="intro__english">WHERE THE DAY SLOWS DOWN</p>
+        <div class="intro__vertical"><h2 id="intro-title">山に憩う。</h2><p>山の気配を感じながら、<br>心ほどけるひとときへ。<br>移りゆく空と、静かな余白。<br>その日だけの景色を、<br>ゆっくりと味わう。</p></div>
+        <span class="intro__seal">霞<br>凪</span>
+      </div>
+      <div class="intro__caption">THE ART OF STILLNESS <span>―</span> HOSHINAGI</div>
+    </section>
+
+    <div class="content-stage"><div class="content-shell">
+      <section class="feature feature--stay" id="stay" aria-labelledby="stay-title">
+        <div class="feature__rail"><span>01</span><h2 id="stay-title">ご宿泊</h2></div>
+        <div class="stay__copy reveal"><span class="eyebrow">STAY / お部屋</span><h3>窓の先に、<br>静かな時間。</h3><p>木のぬくもりと、やわらかな光。ゆったりした客室を想定した滞在イメージです。季節ごとに表情を変える景色とともに、何もしない贅沢を描きました。</p><a class="text-link" href="#sample-contact">お部屋について <span>↗</span></a></div>
+        <div class="stay__gallery reveal" data-carousel="rooms">
+          <div class="stay__frame"><img class="stay__image" src="assets/room-main.jpg" alt="畳と木の設えを持つ客室のイメージ写真"><span class="stay__number"><b id="room-current">01</b> / 03</span></div>
+          <div class="stay__controls"><div class="stay__tabs" role="tablist" aria-label="客室イメージ"><button role="tab" aria-selected="true" data-slide="0" type="button">庭の間</button><button role="tab" aria-selected="false" data-slide="1" type="button">雪の間</button><button role="tab" aria-selected="false" data-slide="2" type="button">光の間</button></div><div class="stay__arrows"><button type="button" class="carousel-prev" aria-label="前の客室">←</button><button type="button" class="carousel-next" aria-label="次の客室">→</button></div></div>
+        </div>
+      </section>
+
+      <section class="feature feature--dining" id="dining" aria-labelledby="dining-title">
+        <div class="feature__rail"><span>02</span><h2 id="dining-title">お食事</h2></div>
+        <div class="dining__visual dining__visual--first reveal"><img src="assets/sushi-chef.jpg" alt="料理人が寿司を仕立てるイメージ写真" loading="lazy"><small>THE CRAFT OF CUISINE</small></div>
+        <div class="dining__copy reveal"><span class="eyebrow">DINING / 食の時間</span><h3>季節を、<br>一皿に。</h3><p>土地の恵みを大切にした食の時間を想定したデザインです。料理と会話をゆっくり楽しむ、静かな夜のために。</p><a class="text-link" href="#sample-contact">お食事について <span>↗</span></a></div>
+        <div class="dining__visual dining__visual--second reveal"><img src="assets/sushi-detail.jpg" alt="寿司の盛り付けのイメージ写真" loading="lazy"></div>
+      </section>
+
+      <section class="feature feature--wellness" id="wellness" aria-labelledby="wellness-title">
+        <div class="feature__rail"><span>03</span><h2 id="wellness-title">湯と余白</h2></div>
+        <div class="wellness__heading reveal"><span class="eyebrow">WELLNESS / くつろぎ</span><h3>深呼吸から、<br>はじまる滞在。</h3></div>
+        <div class="wellness__cards"><article class="wellness__card reveal"><img src="assets/onsen-deck.jpg" alt="木に囲まれた湯浴みのイメージ写真" loading="lazy"><div><span>01 / BATHING</span><h4>湯にひたる</h4><p>あたたかさに包まれながら、移ろう光を眺める時間。</p></div></article><article class="wellness__card reveal"><img src="assets/interior-light.jpg" alt="光と影が美しい和室のイメージ写真" loading="lazy"><div><span>02 / REST</span><h4>静けさを聴く</h4><p>部屋に戻り、何も決めずに過ごす午後の余白。</p></div></article></div>
+      </section>
+
+      <section class="feature feature--news" id="news" aria-labelledby="news-title"><div class="feature__rail"><span>04</span><h2 id="news-title">ご案内</h2></div><div class="news__inner reveal"><span class="eyebrow">JOURNAL / SAMPLE</span><h3>旅の手帖</h3><div class="news__list"><div><time>季節の便り</time><p>山の朝に、深呼吸を。</p><span>↗</span></div><div><time>滞在のこと</time><p>客室で過ごす、静かな午後。</p><span>↗</span></div><div><time>食のこと</time><p>一日の終わりに、旬を味わう。</p><span>↗</span></div></div></div></section>
+    </div>
+
+    </div>
+
+    <section class="closing" id="sample-contact"><div class="closing__image"></div><div class="closing__content reveal"><span>THE JOURNEY CONTINUES</span><h2>次の旅は、<br>静けさの中へ。</h2><p>これは架空の宿泊施設を想定した制作見本です。<br>予約・問い合わせは受け付けていません。</p><span class="closing__button">ご予約（サンプル）</span></div></section>
+  </main>
+  <footer class="footer"><div class="footer__name">HOSHINAGI <small>星凪荘</small></div><p>架空の企業情報を使用したデザインサンプルです。</p><nav aria-label="フッターナビ"><a href="#stay">ご宿泊</a><a href="#dining">お食事</a><a href="#wellness">湯と余白</a><a href="#top">ページ上部へ ↑</a></nav><small>© 2026 LODGING DESIGN SAMPLE</small></footer>
+</body>
+</html>
